@@ -188,3 +188,50 @@ Sends real-time alerts and updates for bookings, messages, and important account
 - `GET /reviews/{review_id}/` - Retrieve a specific review
 - `PUT /reviews/{review_id}/` - Update a specific review
 - `DELETE /reviews/{review_id}/` - Delete a specific review
+
+
+## 🔒 API Security
+
+### Key Security Measures
+
+**Authentication**
+- JWT (JSON Web Tokens) for stateless user authentication
+- Secure password hashing using bcrypt
+- Session management with secure cookie handling
+
+**Authorization**
+- Role-based access control (RBAC) for different user types
+- Permission checks on all API endpoints
+- Property-level authorization ensuring users can only access their own data
+
+**Rate Limiting**
+- Request throttling per user/IP to prevent API abuse
+- Different limits for authenticated vs unauthenticated users
+- Separate rate limits for sensitive endpoints like login and payment
+
+**Data Protection**
+- Input validation and sanitization on all endpoints
+- SQL injection prevention using ORM and parameterized queries
+- XSS protection through proper content encoding
+
+**Payment Security**
+- PCI DSS compliance for all payment processing
+- Tokenization of sensitive payment data
+- No storage of raw credit card information
+
+### Security Importance by Area
+
+**User Data Protection**
+Crucial for maintaining user privacy, preventing identity theft, and complying with data protection regulations like GDPR. Breaches could lead to legal consequences and loss of user trust.
+
+**Payment Security**
+Essential for financial safety and PCI compliance. Any vulnerability could result in direct financial losses for users and severe reputational damage to the platform.
+
+**Booking Integrity**
+Prevents fraudulent bookings, double-booking attacks, and ensures fair access to properties. Security failures could disrupt the core business functionality.
+
+**Property Management**
+Protects host information and prevents unauthorized modifications to property listings. Compromises could lead to fake listings or host account takeovers.
+
+**Review System Authenticity**
+Ensures only genuine guests can leave reviews, maintaining the credibility of the rating system. Without security, the review system becomes unreliable.
