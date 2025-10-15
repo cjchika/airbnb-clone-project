@@ -235,3 +235,35 @@ Protects host information and prevents unauthorized modifications to property li
 
 **Review System Authenticity**
 Ensures only genuine guests can leave reviews, maintaining the credibility of the rating system. Without security, the review system becomes unreliable.
+
+## 🔄 CI/CD Pipeline
+
+### Overview
+CI/CD (Continuous Integration and Continuous Deployment) pipelines automate the process of testing, building, and deploying code changes. This ensures that new features and bug fixes can be delivered quickly and reliably while maintaining code quality and stability.
+
+### Importance for the Project
+- **Rapid Development**: Enables frequent and safe deployments of new features
+- **Quality Assurance**: Automated testing catches bugs early in the development cycle
+- **Consistent Deployments**: Eliminates manual deployment errors and ensures consistent environments
+- **Team Collaboration**: Allows multiple developers to work simultaneously without conflicts
+
+### Pipeline Tools & Process
+- **GitHub Actions**: For automating testing and deployment workflows
+- **Docker**: Containerization to ensure consistent environments across development and production
+- **PostgreSQL**: Database migrations and testing
+- **Pytest**: Automated testing framework for Python code
+- **Redis**: Cache management during testing and deployment
+- **AWS/Heroku**: Target deployment platforms for staging and production environments
+
+### Pipeline Stages
+1. **Continuous Integration**
+   - Code quality checks (linting)
+   - Automated testing (unit, integration)
+   - Security vulnerability scanning
+   - Build verification
+
+2. **Continuous Deployment**
+   - Automated staging deployments
+   - Database migration handling
+   - Health checks and rollback capabilities
+   - Production deployments with approval gates
