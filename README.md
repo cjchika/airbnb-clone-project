@@ -11,6 +11,75 @@ The backend for the Airbnb Clone project is designed to provide a robust and sca
 - **Review System**: Allow users to leave reviews and ratings for properties.
 - **Data Optimization**: Ensure efficient data retrieval and storage through database optimizations.
 
+## 🗄️ Database Design
+
+### Key Entities & Relationships
+
+#### Users
+**Important Fields:**
+- `id` - Primary key identifier
+- `email` - Unique email for authentication
+- `first_name`, `last_name` - User profile information
+- `user_type` - Host or Guest role
+- `created_at` - Account creation timestamp
+
+**Relationships:**
+- A User can have multiple Properties (as a Host)
+- A User can have multiple Bookings (as a Guest)
+- A User can have multiple Reviews (as both reviewer and reviewee)
+
+#### Properties
+**Important Fields:**
+- `id` - Primary key identifier
+- `title` - Property listing title
+- `host_id` - Foreign key to Users table (property owner)
+- `price_per_night` - Rental rate
+- `location` - Property address and coordinates
+
+**Relationships:**
+- A Property belongs to one User (Host)
+- A Property can have multiple Bookings
+- A Property can have multiple Reviews
+
+#### Bookings
+**Important Fields:**
+- `id` - Primary key identifier
+- `guest_id` - Foreign key to Users table
+- `property_id` - Foreign key to Properties table
+- `check_in_date`, `check_out_date` - Booking period
+- `total_price` - Calculated booking cost
+
+**Relationships:**
+- A Booking belongs to one User (Guest)
+- A Booking belongs to one Property
+- A Booking can have one Payment record
+- A Booking can have one Review
+
+#### Reviews
+**Important Fields:**
+- `id` - Primary key identifier
+- `booking_id` - Foreign key to Bookings table
+- `rating` - Numeric rating (1-5 stars)
+- `comment` - Text review content
+- `created_at` - Review submission timestamp
+
+**Relationships:**
+- A Review belongs to one Booking
+- A Review is linked to one Property (through Booking)
+- A Review involves two Users (reviewer and property host)
+
+#### Payments
+**Important Fields:**
+- `id` - Primary key identifier
+- `booking_id` - Foreign key to Bookings table
+- `amount` - Transaction amount
+- `payment_status` - Success, Failed, Pending
+- `payment_method` - Credit card, PayPal, etc.
+
+**Relationships:**
+- A Payment belongs to one Booking
+- A Payment is linked to one User (Guest) through Booking
+
 ## 🛠️ Features Overview
 
 ### 1. API Documentation
