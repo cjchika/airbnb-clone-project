@@ -111,6 +111,29 @@ The backend for the Airbnb Clone project is designed to provide a robust and sca
 - **Indexing**: Implement indexes for fast retrieval of frequently accessed data.
 - **Caching**: Use caching strategies to reduce database load and improve performance.
 
+## 📋 Feature Breakdown
+
+### User Management
+Provides secure user registration, authentication, and profile management capabilities. This feature ensures that users can create accounts, log in securely, and manage their personal information, forming the foundation for all user interactions within the platform.
+
+### Property Management
+Enables hosts to create, update, and manage property listings with detailed information and photos. This core functionality allows property owners to showcase their spaces and maintain accurate availability calendars, driving the primary inventory of the marketplace.
+
+### Booking System
+Handles the complete reservation process from search to confirmation, including date management and pricing calculations. This feature facilitates the core transaction between guests and hosts, ensuring smooth booking experiences and conflict-free scheduling.
+
+### Payment Processing
+Integrates secure payment gateways to handle financial transactions and booking payments. This critical component ensures safe and reliable monetary exchanges between guests and hosts while maintaining proper financial records.
+
+### Review System
+Allows users to leave ratings and reviews for properties and hosts after their stays. This feature builds trust and community within the platform by providing valuable feedback and helping users make informed decisions.
+
+### Search and Discovery
+Provides advanced filtering and search capabilities to help users find suitable properties. This feature enhances user experience by enabling efficient property discovery based on location, dates, amenities, and other criteria.
+
+### Notification System
+Sends real-time alerts and updates for bookings, messages, and important account activities. This keeps users informed about platform activities and ensures timely responses to booking requests and other interactions.
+
 ## ⚙️ Technology Stack
 - **Django**: A high-level Python web framework used for building the RESTful API.
 - **Django REST Framework**: Provides tools for creating and managing RESTful APIs.
